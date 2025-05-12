@@ -1,0 +1,16 @@
+FileSpider is a retro-inspired visual file system explorer built with Python and Tkinter. It started out as a personal tool—something I hacked together to help me get a better visual understanding of the cluttered directories I work in every day. Over time, it evolved into a strange blend of utility and aesthetics.
+
+The interface centers around a radial “spider web” layout that draws folders and files in circular layers. Everything radiates from a central root node, which you can change by clicking on folders. Files and folders are treated as individual nodes, arranged dynamically based on their relationships and depth in the file system. Alongside the visual map, there’s a more traditional tree-style view, which gives you a collapsible breakdown of everything at a glance. The two are kept in sync—you can click around in the tree or on the canvas, and both update accordingly.
+
+I wanted the UI to feel alive. That led me down a rabbit hole of retro visuals: green terminal fonts, a subtle CRT scanline overlay, flickering glitches triggered by keypresses, and custom pixel-glow buttons built with the Canvas widget. It’s all running inside Tkinter, with no external dependencies—just stock Python libraries and a lot of custom, light-weight drawing logic.
+
+You can input a path manually or use the file picker to select a directory. There’s also a context menu with some simple actions like opening folders in Explorer, copying paths to the clipboard, or setting a folder as the new root. You can control the depth and breadth of the web to keep things readable, which is especially helpful if you’re digging into large projects or messy drives. The depth setting determines how many levels deep the scanner will go when mapping the folder structure. For example, a depth of 1 will only show the selected root directory and its immediate children. A depth of 3 will go three levels deep: the root, its subfolders, and their subfolders. This is useful for controlling visual complexity—higher depths create denser webs, which can be overwhelming if not scoped properly.
+
+The max files setting limits how many non-folder files are shown in each directory. This helps prevent the visualization from becoming cluttered when scanning folders with hundreds or thousands of files. 
+
+For me, FileSpider is useful in those moments when I’ve forgotten where I put something, or when I want a quick sense of the structure of a codebase without digging through folders manually. It’s also just kind of fun to use. I find it easier on the brain than traditional file explorers, especially when I’m switching between multiple projects or trying to untangle a bunch of nested folders.
+
+It’s written entirely in Python, tested on versions 3.7 and up, and doesn’t require any packages beyond what comes with the standard library. Just run python fileSpider.py from the terminal and you’re good to go.
+
+If you're someone who likes visual tools, or if you’ve ever wanted your file system to feel a little more like an old sci-fi terminal, FileSpider might be something you'll enjoy. I built it because I needed it—and I kept working on it because it turned into something I liked having around.
+
